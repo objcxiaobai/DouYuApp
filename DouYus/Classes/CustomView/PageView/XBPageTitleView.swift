@@ -280,7 +280,7 @@ extension XBPageTitleView{
             // 是否允许标题滚动
             if option.isTitleScrollEnable{
                 //在当前图形上下文中的指定矩形内，计算并返回使用给定选项和显示特征绘制的接收器的边框矩形。
-                labelW = (titles[i] as NSString).boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 0), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : titleLabel.font], context: nil).width
+                labelW = (titles[i] as NSString).boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 0), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : titleLabel.font], context: nil).width
                 
                 //第一个间隔10
                 labelX = i == 0 ? option.kMarginW * 0.5 :(titleLabs[i-1].frame.maxX + option.kMarginW)

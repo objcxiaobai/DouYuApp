@@ -43,7 +43,7 @@ class XBTabBarController: UITabBarController {
         
         //修改tabBar标题
         controller.tabBarItem.title = title;
-        controller.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -3);
+        controller.tabBarItem.titlePositionAdjustment = UIOffset.init(horizontal: 0, vertical: -3);
         controller.tabBarItem.image = UIImage(named: norImage);
         controller.tabBarItem.selectedImage = UIImage(named: selectedImage);
         /* 个人感觉此处有问题*/
@@ -51,7 +51,7 @@ class XBTabBarController: UITabBarController {
         //导航栏标题
         controller.title = title;
         //添加到tabbar控制器容器中
-        self.addChildViewController(nav);
+        self.addChild(nav);
         
     }
     

@@ -124,7 +124,7 @@ extension XBPageContentView{
         // 将所有的子控制器添加到父控制器中
         for childVC in childVCs {
             //当将子视图控制器的视图嵌入到当前视图控制器的内容中时，这种关系是必要的。如果新的子视图控制器已经是容器视图控制器的子视图控制器，则在添加前将其从容器中删除。
-            self.parentViewController?.addChildViewController(childVC)
+            self.parentViewController?.addChild(childVC)
         }
         
         addSubview(collectionView)
