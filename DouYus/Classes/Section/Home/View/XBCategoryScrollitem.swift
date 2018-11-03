@@ -30,11 +30,13 @@ class XBCategoryScrollitem: XBBaseCollectionCell {
         collectionView.backgroundColor = kWhite
         collectionView.delegate = self
         collectionView.dataSource = self
+        //自定义item
         collectionView.register(XBCategoryItem.self, forCellWithReuseIdentifier: XBCategoryItem.identifier())
         collectionView.isScrollEnabled = false
         return collectionView
         
     }()
+    //重写父类的方法
     override func xb_initWithView() {
         addSubview(collectionView)
     }

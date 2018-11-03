@@ -18,7 +18,7 @@ class XBCategroyListCell: XBBaseTableCell {
     
     
     
-    lazy var  pageControl : UIPageControl = {
+    private lazy var  pageControl : UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.pageIndicatorTintColor = colorWithRGBA(236, 236, 236, 1.0)
         pageControl.currentPageIndicatorTintColor = colorWithRGBA(212, 212, 212, 1.0)
@@ -47,6 +47,9 @@ class XBCategroyListCell: XBBaseTableCell {
         //分页
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
+        /**
+         如果该属性的值为true，当滚动视图遇到内容边界时就会反弹。在视觉上跳跃表示滚动已经到达了内容的边缘。如果值为false，滚动将立即停止在内容边界，而不会反弹。默认值为true。
+         */
         collectionView.bounces = false
         return collectionView
     }()
@@ -77,6 +80,7 @@ class XBCategroyListCell: XBBaseTableCell {
 
 }
 
+//设置UI
 extension XBCategroyListCell{
     
     private func setUpAllView(){
@@ -98,6 +102,7 @@ extension XBCategroyListCell{
     }
     
 }
+//设置代理源
 extension XBCategroyListCell : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if cateTwoList == nil{ return 0 }
@@ -131,6 +136,7 @@ extension XBCategroyListCell : UICollectionViewDataSource{
         
     }
 }
+
 extension XBCategroyListCell : UICollectionViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.bounds.width + 0.5)

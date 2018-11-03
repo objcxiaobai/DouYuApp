@@ -34,12 +34,13 @@ class XBCategoryItem: XBBaseCollectionCell {
     }()
     
     
-    
+    //重写父类的配置UI
     override func xb_initWithView() {
         setUpAllView()
     }
 }
 
+//ui设置
 extension XBCategoryItem{
     
     private func setUpAllView(){

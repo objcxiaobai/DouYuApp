@@ -17,6 +17,7 @@ class ClassifyController: BaseViewController {
     
     private var recommenCateData : XBRecomCateData?
     
+    
     private var cateListData : [XBCateOneData] = [XBCateOneData]()
    
     /**-----------------------------**/
@@ -67,12 +68,15 @@ class ClassifyController: BaseViewController {
 extension ClassifyController{
     private func loadCateListData(){
         
-       // 初始化信号量为1
+        //gcd
+        //初始化信号量为1
         let semaphoreA = DispatchSemaphore(value: 1)
+        //初始化信号量为0
         let semaphoreB = DispatchSemaphore(value: 0)
+        //初始化信号量为0
         let semaphoreC = DispatchSemaphore(value: 0)
         
-        
+        //
         let queue = DispatchQueue(label: "com.douyus.cate1.queue",qos: .utility, attributes: .concurrent)
         
         
